@@ -1,12 +1,40 @@
-import React from 'react'
+import React,{useState}from 'react'
+   
+export default function TextForm(props) {
+const handleUpClick =() =>{
+    // console.log("Upper was Clicked"+text);
+    let newText=text.toUpperCase();
+    setText(newText);
+}
+const handleOnChange =(event) =>{
+    // console.log("On change");
+    setText(event.target.value);
+}
+const handleLoCase =()=>{
+    let newText=text.toLowerCase();
+   setText(newText);
+}
 
-export default function TextForm() {
+const handleClear =() =>{
+    
+    setText("");
+}
+
+     const[text,setText]=useState("");
+     //text="new text";//wrong way to change the state
+     //setText=("new Text");//correct way to change the state
   return (
     <div>
-        <div class="mb-3">
-        <label for="myBox" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="myBox" rows="3"></textarea>
-        </div>
+        <h1>{props.heading}</h1>
+        <div className="mb-3">
+        <textarea className="form-control"  value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+       </div>
+        <button className="btn btn-primary" onClick={handleUpClick}>Convert to upperCase</button>
+         
+            <button className="btn btn-primary" onClick={handleLoCase} style={{ marginLeft: '10px' }}>Convert to lowerCase</button>
+
+       <button className="btn btn-primary" onClick={handleClear} style={{ marginLeft: '10px' }}>clear Text</button>
+        
     </div>
   )
 }
