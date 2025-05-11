@@ -1,7 +1,7 @@
 
 import './App.css';
 import Navbar from './Components/Navbar';
-import textForm from './Components/textForm';
+import TextForm from './Components/TextForm';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
   //and to avoid using extra div tag in the DOM
 <>
 <Navbar title = "TextUtils" aboutText="About"/>
-<textForm/>
+<TextForm/>
 {/* <Navbar/> */}
 {/* <Navbar title = "TextUtils"/> */}
 
